@@ -6,14 +6,19 @@ import { SignupComponent } from './components/signup/signup.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 import { AuthGuard } from './shared/auth.guard';
+import { HomeComponent } from './components/home/home/home.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/log-in', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'log-in', component: SigninComponent },
   { path: 'sign-up', component: SignupComponent },
   {
     path: 'user-profile/:id',
     component: UserProfileComponent,
+    canActivate: [AuthGuard],
+  },{
+    path: 'home',
+    component: HomeComponent,
     canActivate: [AuthGuard],
   },
 ];

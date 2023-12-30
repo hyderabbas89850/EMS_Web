@@ -59,6 +59,9 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { ToastrModule } from 'ngx-toastr';
+import { HomeComponent } from './components/home/home/home.component';
+import { FooterComponent } from './components/footer/footer/footer.component';
+import { HeaderComponent } from './components/header/header/header.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +69,9 @@ import { ToastrModule } from 'ngx-toastr';
     SigninComponent,
     SignupComponent,
     UserProfileComponent,
+    HomeComponent,
+    FooterComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

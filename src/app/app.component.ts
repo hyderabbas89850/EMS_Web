@@ -10,8 +10,4 @@ import { ToastrService } from 'ngx-toastr';
 export class AppComponent {
   constructor(public authService: AuthService, private toastrService: ToastrService) {}
 
-  logout() {
-    this.authService.doLogout();
-    this.toastrService.info('Logout Successfully.');
-  }
 }

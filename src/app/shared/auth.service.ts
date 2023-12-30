@@ -31,10 +31,11 @@ export class AuthService {
         if(res.status == 1){
           this.toastrService.success(res.message);
           localStorage.setItem('access_token', res.data.token);
-          this.getUserProfile(res._id).subscribe((res) => {
+          this.router.navigate(['home/']);
+          /**this.getUserProfile(res._id).subscribe((res) => {
             this.currentUser = res;
             this.router.navigate(['user-profile/' + res.msg._id]);
-          });
+          });*/
         }else{
           this.toastrService.warning(res.message);
         }

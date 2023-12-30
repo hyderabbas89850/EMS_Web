@@ -1,4 +1,5 @@
-<mat-card-content>
+<div class="wrapper">
+<mat-card-content *ngIf="!this.authService.isLoggedIn">
   <form class="form_login" [formGroup]="signinForm" (ngSubmit)="loginUser()" autocomplete="off">
      <mat-form-field class="full-width">
             <mat-label>Email</mat-label>
@@ -11,7 +12,7 @@
          <button type="submit" class="btn btn-block btn-primary">Sign in</button>
   </form>
 </mat-card-content>
-
+</div>
 
 <!--<div class="auth-wrapper">
   <form class="form-signin" [formGroup]="signinForm" (ngSubmit)="loginUser()">

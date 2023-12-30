@@ -1,0 +1,11 @@
+
+<mat-toolbar class="gradient">
+    <mat-toolbar-row>
+      <a mat-button routerLink="/">Home</a>
+       <span class="spacer" ></span>
+       <a mat-button routerLink="/sign-up">Register</a>
+       <a mat-button routerLink="/log-in"  *ngIf="!this.authService.isLoggedIn">Login</a>
+       <a mat-button (click)="logout()" *ngIf="this.authService.isLoggedIn" color="danger">Logout</a>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  

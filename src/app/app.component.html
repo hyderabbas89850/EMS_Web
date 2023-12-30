@@ -1,13 +1,6 @@
-<mat-toolbar class="gradient">
-  <mat-toolbar-row>
-    <a mat-button routerLink="/">Home</a>
-     <span class="spacer" ></span>
-     <a mat-button routerLink="/sign-up">Register</a>
-     <a mat-button routerLink="/log-in"  *ngIf="!this.authService.isLoggedIn">Login</a>
-     <a mat-button (click)="logout()" *ngIf="this.authService.isLoggedIn" color="danger">Logout</a>
-  </mat-toolbar-row>
-</mat-toolbar>
-
+<app-header></app-header>
+<router-outlet></router-outlet>  
+<app-footer></app-footer>
 <!--<div
   class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm fixed-top"
 >
@@ -42,4 +35,3 @@
   </button>
 </div>
 -->
-<router-outlet></router-outlet>
