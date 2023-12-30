@@ -31,12 +31,16 @@ export class AuthService {
     return this.http
       .post<any>(`${this.endpoint}/auth/signin`, user)
       .subscribe((res: any) => {
-        alert(JSON.stringify(res));
-        localStorage.setItem('access_token', res.token);
-        this.getUserProfile(res._id).subscribe((res) => {
-          this.currentUser = res;
-          this.router.navigate(['user-profile/' + res.msg._id]);
-        });
+        if(res.status == 1){
+          alert(res.message);
+          localStorage.setItem('access_token', res.data.token);
+          this.getUserProfile(res._id).subscribe((res) => {
+            this.currentUser = res;
+            this.router.navigate(['user-profile/' + res.msg._id]);
+          });
+        }else{
+          alert(res.message);
+        }
       });
   }
 

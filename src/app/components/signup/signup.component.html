@@ -1,4 +1,35 @@
-<div class="auth-wrapper">
+  <mat-card-content>
+    <form class="form_login" [formGroup]="signupForm" (ngSubmit)="registerUser()" autocomplete="off">
+       <mat-form-field class="full-width">
+              <mat-label>First Name</mat-label>
+              <input  matInput  placeholder="First name"  name="firstName" formControlName="firstName"  required>
+           </mat-form-field>
+           <mat-form-field class="full-width">
+              <mat-label>Last Name</mat-label>
+              <input  matInput  placeholder="Last Name" name="lastName" formControlName="lastName"  required>
+           </mat-form-field>
+           <mat-form-field class="full-width">
+            <mat-label>Mobile</mat-label>
+            <input type="number"  matInput  placeholder="Mobile" name="mobile" formControlName="mobile"  required>
+         </mat-form-field>
+         <mat-form-field class="full-width">
+          <mat-label>Address</mat-label>
+          <input  matInput  placeholder="Address" name="address" formControlName="address"  required>
+       </mat-form-field>
+        <mat-form-field class="full-width">
+              <mat-label>Email</mat-label>
+              <input type="email" matInput  placeholder="Email" name="email" formControlName="email" autocomplete="off">
+           </mat-form-field>
+           <mat-form-field class="full-width">
+              <mat-label>Password</mat-label>
+              <input  matInput type="password" placeholder="Password"  name="password" formControlName="password" autocomplete="off">
+           </mat-form-field>
+           <button type="submit" class="btn btn-block btn-primary">Sign up</button>
+    </form>
+  </mat-card-content>
+
+
+<!--<div class="auth-wrapper">
   <form
     class="form-signin"
     [formGroup]="signupForm"
@@ -38,3 +69,4 @@
     <button type="submit" class="btn btn-block btn-primary">Sign up</button>
   </form>
 </div>
+-->

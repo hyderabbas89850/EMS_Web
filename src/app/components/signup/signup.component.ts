@@ -18,8 +18,10 @@ export class SignupComponent implements OnInit {
     public router: Router
   ) {
     this.signupForm = this.fb.group({
-      name: [''],
+      firstName: [''],
+      lastName: [''],
       email: [''],
+      address: [''],
       mobile: [''],
       password: [''],
     });
@@ -29,9 +31,12 @@ export class SignupComponent implements OnInit {
 
   registerUser() {
     this.authService.signUp(this.signupForm.value).subscribe((res) => {
-      if (res.result) {
+      if (res.status == 1) {
         this.signupForm.reset();
         this.router.navigate(['log-in']);
+        alert(res.message);
+      }else{
+        alert(res.message);
       }
     });
   }
