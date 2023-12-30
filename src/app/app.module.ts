@@ -58,6 +58,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -77,7 +78,12 @@ import { MatTreeModule } from '@angular/material/tree';
     MatNativeDateModule,MatDatepickerModule,MatIconModule,
     MatButtonModule,MatCheckboxModule, 
     MatCardModule,MatFormFieldModule,MatInputModule,MatListModule,
-    MatRadioModule
+    MatRadioModule,
+    ToastrModule.forRoot({
+      timeOut: 15000, // 15 seconds
+      closeButton: true,
+      progressBar: true,
+    })
   ],
   exports: [MatNativeDateModule,FormsModule,
     MatDatepickerModule,MatIconModule,MatButtonModule,MatCheckboxModule, MatToolbarModule, MatCardModule,MatFormFieldModule,MatInputModule,MatListModule,MatRadioModule,],

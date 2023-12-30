@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/angular-meanstack-authentication'),
+      dir: require('path').join(__dirname, './coverage/EMS_Web'),
       subdir: '.',
       reporters: [
         { type: 'html' },

@@ -2,12 +2,9 @@ import { Injectable } from '@angular/core';
 import { User } from './user';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
-import {
-  HttpClient,
-  HttpHeaders,
-  HttpErrorResponse,
-} from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse} from '@angular/common/http';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +15,7 @@ export class AuthService {
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   currentUser = {};
 
-  constructor(private http: HttpClient, public router: Router) {}
+  constructor(private http: HttpClient, public router: Router, private toastrService: ToastrService) {}
 
   // Sign-up
   signUp(user: User): Observable<any> {
@@ -32,14 +29,14 @@ export class AuthService {
       .post<any>(`${this.endpoint}/auth/signin`, user)
       .subscribe((res: any) => {
         if(res.status == 1){
-          alert(res.message);
+          this.toastrService.success(res.message);
           localStorage.setItem('access_token', res.data.token);
           this.getUserProfile(res._id).subscribe((res) => {
             this.currentUser = res;
             this.router.navigate(['user-profile/' + res.msg._id]);
           });
         }else{
-          alert(res.message);
+          this.toastrService.warning(res.message);
         }
       });
   }

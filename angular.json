@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-meanstack-authentication": {
+    "EMS_Web": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-meanstack-authentication",
+            "outputPath": "dist/EMS_Web",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -33,6 +33,7 @@
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/ngx-toastr/toastr.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -74,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-meanstack-authentication:build:production"
+              "browserTarget": "EMS_Web:build:production"
             },
             "development": {
-              "browserTarget": "angular-meanstack-authentication:build:development"
+              "browserTarget": "EMS_Web:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -85,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-meanstack-authentication:build"
+            "browserTarget": "EMS_Web:build"
           }
         },
         "test": {
@@ -110,5 +111,5 @@
       }
     }
   },
-  "defaultProject": "angular-meanstack-authentication"
+  "defaultProject": "EMS_Web"
 }
