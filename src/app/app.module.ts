@@ -11,6 +11,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './shared/authconfig.interceptor';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatToolbarModule} from '@angular/material/toolbar'; 
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     SigninComponent,
     SignupComponent,
     UserProfileComponent,
+    MatToolbarModule
   ],
   imports: [
     BrowserModule,
@@ -25,6 +28,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     {
