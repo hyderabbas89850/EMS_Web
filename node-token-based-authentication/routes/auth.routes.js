@@ -6,7 +6,7 @@ const userSchema = require('../models/User')
 const authorize = require('../middlewares/auth')
 const { check, validationResult } = require('express-validator')
 
-// Sign-up
+// Signup
 router.post(
   '/register-user',
   [

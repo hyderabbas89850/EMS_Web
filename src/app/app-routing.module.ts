@@ -7,13 +7,15 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 
 import { AuthGuard } from './shared/auth.guard';
 import { HomeComponent } from './components/home/home/home.component';
+import { LogoutComponent } from './components/logout/logout/logout.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'log-in', component: SigninComponent },
-  { path: 'sign-up', component: SignupComponent },
+  { path: 'login', component: SigninComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'logout', component: LogoutComponent},
   {
-    path: 'user-profile/:id',
+    path: 'userprofile/:id',
     component: UserProfileComponent,
     canActivate: [AuthGuard],
   },{

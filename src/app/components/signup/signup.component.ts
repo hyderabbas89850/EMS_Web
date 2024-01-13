@@ -33,7 +33,7 @@ export class SignupComponent implements OnInit {
     this.authService.signUp(this.signupForm.value).subscribe((res) => {
       if (res.status == 1) {
         this.signupForm.reset();
-        this.router.navigate(['log-in']);
+        this.router.navigate(['login']);
         alert(res.message);
       }else{
         alert(res.message);

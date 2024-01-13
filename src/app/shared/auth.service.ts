@@ -17,7 +17,7 @@ export class AuthService {
 
   constructor(private http: HttpClient, public router: Router, private toastrService: ToastrService) {}
 
-  // Sign-up
+  // Signup
   signUp(user: User): Observable<any> {
     let api = `${this.endpoint}/auth/signup`;
     return this.http.post(api, user).pipe(catchError(this.handleError));
@@ -54,7 +54,8 @@ export class AuthService {
   doLogout() {
     let removeToken = localStorage.removeItem('access_token');
     if (removeToken == null) {
-      this.router.navigate(['log-in']);
+      this.toastrService.error('Logout Successfully.');
+      this.router.navigate(['login']);
     }
   }
 

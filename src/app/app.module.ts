@@ -62,6 +62,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { HomeComponent } from './components/home/home/home.component';
 import { FooterComponent } from './components/footer/footer/footer.component';
 import { HeaderComponent } from './components/header/header/header.component';
+import { LogoutComponent } from './components/logout/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { HeaderComponent } from './components/header/header/header.component';
     HomeComponent,
     FooterComponent,
     HeaderComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -84,7 +86,7 @@ import { HeaderComponent } from './components/header/header/header.component';
     MatNativeDateModule,MatDatepickerModule,MatIconModule,
     MatButtonModule,MatCheckboxModule, 
     MatCardModule,MatFormFieldModule,MatInputModule,MatListModule,
-    MatRadioModule,
+    MatRadioModule,MatSidenavModule,
     ToastrModule.forRoot({
       timeOut: 15000, // 15 seconds
       closeButton: true,

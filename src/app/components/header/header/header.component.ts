@@ -16,7 +16,6 @@ export class HeaderComponent implements OnInit {
   
   logout() {
     this.authService.doLogout();
-    this.toastrService.info('Logout Successfully.');
   }
 
 }
