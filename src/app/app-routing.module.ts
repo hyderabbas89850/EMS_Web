@@ -6,9 +6,9 @@ import { SignupComponent } from './components/signup/signup.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 import { AuthGuard } from './shared/auth.guard';
-import { HomeComponent } from './components/home/home/home.component';
 import { LogoutComponent } from './components/logout/logout/logout.component';
 import { AboutusComponent } from './components/aboutus/aboutus/aboutus.component';
+import { HomeComponent } from './components/home/home/home.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -23,13 +23,6 @@ const routes: Routes = [
       {
         path: 'userprofile',
         component: UserProfileComponent,
-        data:{
-          breadcrumb: []
-        }
-      },
-      {
-        path: 'aboutus',
-        component: AboutusComponent,
         data:{
           breadcrumb: []
         }
