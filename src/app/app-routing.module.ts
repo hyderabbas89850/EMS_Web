@@ -8,6 +8,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { AuthGuard } from './shared/auth.guard';
 import { HomeComponent } from './components/home/home/home.component';
 import { LogoutComponent } from './components/logout/logout/logout.component';
+import { AboutusComponent } from './components/aboutus/aboutus/aboutus.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -22,6 +23,15 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
     canActivate: [AuthGuard],
+    children:[
+      {
+        path: 'aboutus',
+        component: AboutusComponent,
+        data:{
+          breadcrumb: []
+        }
+      }
+    ]
   },
 ];
 

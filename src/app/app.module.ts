@@ -60,9 +60,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { ToastrModule } from 'ngx-toastr';
 import { HomeComponent } from './components/home/home/home.component';
-import { FooterComponent } from './components/footer/footer/footer.component';
-import { HeaderComponent } from './components/header/header/header.component';
 import { LogoutComponent } from './components/logout/logout/logout.component';
+import { AboutusComponent } from './components/aboutus/aboutus/aboutus.component';
 
 @NgModule({
   declarations: [
@@ -71,9 +70,8 @@ import { LogoutComponent } from './components/logout/logout/logout.component';
     SignupComponent,
     UserProfileComponent,
     HomeComponent,
-    FooterComponent,
-    HeaderComponent,
     LogoutComponent,
+    AboutusComponent,
   ],
   imports: [
     BrowserModule,

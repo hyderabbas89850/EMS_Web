@@ -1,2 +1,55 @@
-<app-header></app-header>
-        
+<mat-toolbar color="primary">
+    <button mat-icon-button (click)="nav.toggle()"><mat-icon>menu</mat-icon></button>
+    <span>.................INDUSTRIES PVT LMT</span>
+    <span class="spacer"></span>
+    <button mat-stroked-button routerLink="/signup" *ngIf="this.authService.isLoggedIn">    
+      Register
+    </button>
+    <button mat-stroked-button routerLink="/logout" *ngIf="this.authService.isLoggedIn">    
+      Logout
+    </button>
+    </mat-toolbar>
+    <mat-sidenav-container class="sidenav-wrapper" >
+      <mat-sidenav #nav mode="side">
+        <a [routerLink]="['/home']" color="primary">
+          <button mat-button>
+            <mat-icon class="btnspace">home</mat-icon>
+            <span>Home</span>
+          </button>
+        </a>
+        <a [routerLink]="['profile']" color="primary">
+          <button mat-button>
+            <mat-icon class="btnspace">person</mat-icon>
+            <span>Profile</span>
+          </button>
+        </a>
+        <a [routerLink]="['aboutus']" color="primary">
+          <button mat-button>
+            <mat-icon class="btnspace">info</mat-icon>
+            <span>About Us</span>
+          </button>
+        </a>
+        <a [routerLink]="['contactus']" color="primary">
+            <button mat-button>
+              <mat-icon class="btnspace">call</mat-icon>
+              <span>Contact Us</span>
+            </button>
+          </a>
+          <a [routerLink]="['/logout']" color="primary">
+            <button mat-button>
+              <mat-icon class="btnspace">logout</mat-icon>
+              <span>Logout</span>
+            </button>
+          </a>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+     <h1>footer ends</h1>
+    </mat-sidenav-container>
+    
+    
+  
+  
+  
+    
