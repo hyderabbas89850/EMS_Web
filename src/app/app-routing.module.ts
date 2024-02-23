@@ -16,14 +16,24 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'logout', component: LogoutComponent},
   {
-    path: 'userprofile/:id',
-    component: UserProfileComponent,
-    canActivate: [AuthGuard],
-  },{
     path: 'home',
     component: HomeComponent,
     canActivate: [AuthGuard],
     children:[
+      {
+        path: 'userprofile',
+        component: UserProfileComponent,
+        data:{
+          breadcrumb: []
+        }
+      },
+      {
+        path: 'aboutus',
+        component: AboutusComponent,
+        data:{
+          breadcrumb: []
+        }
+      },
       {
         path: 'aboutus',
         component: AboutusComponent,
